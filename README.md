@@ -1,6 +1,10 @@
 # SOD2CharacterRoller
 A self-made sod2 character roller using tesseract ocr engine.
 
+Recently Version: 1.2.1
+UI Language Support: Chinese
+Gameplay Lanaguage Support: English
+
 How to use:
 1. Open software and state of decays 2, the gameplay language should be english.
 2. Press "自动校准" (means auto calibration) button, the software will automaticlly calculate the coordinates of 3 character rects.
@@ -11,15 +15,15 @@ How to use:
 7. The roll process will end when target weight is met, or when you press the delete or keypad 0.
 
 Calculation of weight:
-The weight of a trait depend on the trait list on the left side. 
-The weight of a character is equal to the sum of all traits he have.
-When the weight of the character is bigger than the target weight you fill, the roll process of that slot will stop.
+  The weight of a trait depend on the trait list on the left side. 
+  The weight of a character is equal to the sum of all traits he have.
+  When the weight of the character is bigger than the target weight you fill, the roll process of that slot will stop.
 
 Example of a weight calculation:
-If weight of "blood plague survivor" is set to 5, and weight of "unbreakable" is set to 4.
-And target weight is set to 8.
-Any slot could stop when a character with these 2 traits occur.
-Because the total weight of that character is 4+5=9 > 8.
+  If weight of "blood plague survivor" is set to 5, and weight of "unbreakable" is set to 4.
+  And target weight is set to 8.
+  Any slot could stop when a character with these 2 traits occur.
+  Because the total weight of that character is 4+5=9 > 8.
 
 Notice:
 1. Due to ocr effectiveness and speed, this software is designed for a english gameplay language.
