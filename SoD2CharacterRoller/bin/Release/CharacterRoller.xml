@@ -1,0 +1,153 @@
+<CharacterRoller>
+  <Attributes Lang="eng" Using="1">
+    <Atrribute Name="Blood Plague Survivor" Weight="6" Comment="血疫幸存者" />
+    <Atrribute Name="Unbreakable" Weight="4" Comment="不灭" />
+    <Atrribute Name="Immortal" Weight="4" Comment="无敌之人" />
+    <Atrribute Name="Hard to Kill" Weight="4" Comment="杀不死的人" />
+    <Atrribute Name="Resilient" Weight="3" Comment="有韧性" />
+    <Atrribute Name="Hard as Nails" Weight="3" Comment="铁石心肠" />
+    <Atrribute Name="Fights Defensively" Weight="3" Comment="防守派" />
+    <Atrribute Name="Never Been Sick" Weight="3" Comment="从未生病" />
+    <Atrribute Name="Took a Lot of Dares" Weight="3" Comment="做了很多大胆事" />
+    <Atrribute Name="Does Heavy Lifting" Weight="2" Comment="负责挑重担" />
+    <Atrribute Name="Indefatigable" Weight="2" Comment="不知疲倦" />
+    <Atrribute Name="Daredevil" Weight="2" Comment="莽撞之人" />
+    <Atrribute Name="Keeps Hidden Pouches" Weight="2" Comment="暗袋持有者" />
+    <Atrribute Name="Good Habits" Weight="2" Comment="好习惯" />
+    <Atrribute Name="Visited Yard Sales" Weight="2" Comment="二手市场常客" />
+    <Atrribute Name="Just Keeps Going" Weight="2" Comment="脚步不停" />
+    <Atrribute Name="Does Tons of Squats" Weight="2" Comment="深蹲铁人" />
+    <Atrribute Name="Can Take a Punch" Weight="2" Comment="挨得了拳头" />
+    <Atrribute Name="Total Lightweight" Weight="2" Comment="轻量用药" />
+    <Atrribute Name="Sales Associate" Weight="2" Comment="销售助理" />
+    <Atrribute Name="Exuberant" Weight="2" Comment="活力四射" />
+    <Atrribute Name="Incredible Immune System" Weight="2" Comment="超强免疫系统" />
+    <Atrribute Name="Sleeps on the Ground" Weight="1" Comment="睡在地上" />
+    <Atrribute Name="Opera Singer" Weight="1" Comment="歌剧演唱家" />
+    <Atrribute Name="Never Cries" Weight="1" Comment="从未哭泣" />
+    <Atrribute Name="Stays Fit" Weight="1" Comment="天生好体格" />
+    <Atrribute Name="Librarian" Weight="1" Comment="图书管理员" />
+    <Atrribute Name="Early Riser" Weight="1" Comment="习惯早起" />
+    <Atrribute Name="Lived at a High Altitude" Weight="1" Comment="农村出身" />
+    <Atrribute Name="High Lung Capacity" Weight="1" Comment="高肺活量" />
+    <Atrribute Name="Beekeeper" Weight="1" Comment="养蜂人" />
+    <Atrribute Name="Good Posture" Weight="1" Comment="体态良好" />
+    <Atrribute Name="Expert Traveler" Weight="1" Comment="专业旅者" />
+    <Atrribute Name="Meal Delivery Driver" Weight="1" Comment="外卖送餐员" />
+    <Atrribute Name="Hardy" Weight="1" Comment="硬汉" />
+    <Atrribute Name="Determined" Weight="1" Comment="决心之人" />
+    <Atrribute Name="Furniture Adjuster" Weight="1" Comment="家具调节师" />
+    <Atrribute Name="Highly Responsible" Weight="1" Comment="高度责任感" />
+    <Atrribute Name="Eats Like a Bird" Weight="1" Comment="麻雀般的胃" />
+    <Atrribute Name="Does Yoga" Weight="1" Comment="练瑜伽" />
+    <Atrribute Name="Went to Night School" Weight="1" Comment="准夜校生" />
+    <Atrribute Name="Miner" Weight="1" Comment="矿工" />
+    <Atrribute Name="Pulled All-Nighters" Weight="1" Comment="熬夜惯犯" />
+    <Atrribute Name="Ascetic" Weight="1" Comment="苦行者" />
+    <Atrribute Name="Tough" Weight="1" Comment="身强体壮" />
+    <Atrribute Name="Has Rough Hands" Weight="1" Comment="粗糙的双手" />
+    <Atrribute Name="Will Eat Anything" Weight="1" Comment="什么都吃" />
+    <Atrribute Name="Organized" Weight="1" Comment="井井有条" />
+    <Atrribute Name="Lived in the Desert" Weight="1" Comment="沙漠居民" />
+    <Atrribute Name="Rock climber" Weight="-1" Comment="攀岩者" />
+    <Atrribute Name="Nerve Damage" Weight="-1" Comment="神经损伤" />
+    <Atrribute Name="Narcolepsy" Weight="-1" Comment="发作性嗜睡症" />
+    <Atrribute Name="Amateur Comic" Weight="-1" Comment="业余喜剧人" />
+    <Atrribute Name="Stress Eater" Weight="-1" Comment="压力性暴食" />
+    <Atrribute Name="Pinball Wizard" Weight="-1" Comment="弹道巫师" />
+    <Atrribute Name="Pessimist" Weight="-1" Comment="消极又不失攻击性" />
+    <Atrribute Name="Pageant Wagoneer" Weight="-1" Comment="优秀跑团主持人" />
+    <Atrribute Name="Food Borrower" Weight="-1" Comment="蹭饭王" />
+    <Atrribute Name="Got Fired A Lot" Weight="-1" Comment="被炒了很多次" />
+    <Atrribute Name="Practices Ikebana" Weight="-1" Comment="练习花道" />
+    <Atrribute Name="Bleak Outlook" Weight="-1" Comment="前景黯淡" />
+    <Atrribute Name="Self-Sabotaging" Weight="-1" Comment="自我设限" />
+    <Atrribute Name="Lost Security Blanket" Weight="-1" Comment="安全毯丢失" />
+    <Atrribute Name="Slovenly" Weight="-1" Comment="邋遢" />
+    <Atrribute Name="Mall Cop" Weight="-1" Comment="商场保安" />
+    <Atrribute Name="Pro Poker Player" Weight="-1" Comment="职业扑克玩家" />
+    <Atrribute Name="Has Traumatic Flashbacks" Weight="-1" Comment="创伤闪回患者" />
+    <Atrribute Name="Auditor" Weight="-1" Comment="审计员" />
+    <Atrribute Name="Has Severe Allergies" Weight="-1" Comment="有严重过敏症" />
+    <Atrribute Name="Prison Tattoo Artist" Weight="-1" Comment="监狱纹身师" />
+    <Atrribute Name="Hypochondriac" Weight="-1" Comment="忧郁症" />
+    <Atrribute Name="In Mourning" Weight="-1" Comment="戴孝中" />
+    <Atrribute Name="Vlogger" Weight="-1" Comment="视频博主" />
+    <Atrribute Name="Snores" Weight="-1" Comment="鼾声如雷" />
+    <Atrribute Name="Incompetent" Weight="-1" Comment="精神不振" />
+    <Atrribute Name="Stand-Up Comic" Weight="-1" Comment="单口相声演员" />
+    <Atrribute Name="Lazy" Weight="-2" Comment="懒汉" />
+    <Atrribute Name="Couch Potato" Weight="-2" Comment="沙发上的土豆" />
+    <Atrribute Name="Poor Bedside Manner" Weight="-2" Comment="狂躁医生" />
+    <Atrribute Name="Shady Mechanic" Weight="-2" Comment="坑人的技工" />
+    <Atrribute Name="Has Nightmares" Weight="-2" Comment="噩梦缠身" />
+    <Atrribute Name="Built the worst Deck" Weight="-2" Comment="建了最差的平台" />
+    <Atrribute Name="Arthritis" Weight="-2" Comment="关节炎患者" />
+    <Atrribute Name="Massage Therapist" Weight="-2" Comment="脊柱按摩师" />
+    <Atrribute Name="Food Torturer" Weight="-2" Comment="食品虐待者" />
+    <Atrribute Name="Night Terrors" Weight="-2" Comment="梦魇" />
+    <Atrribute Name="Medicine Merchant" Weight="-2" Comment="药品商" />
+    <Atrribute Name="Barber" Weight="-2" Comment="理发师" />
+    <Atrribute Name="Insomniac" Weight="-2" Comment="失眠症" />
+    <Atrribute Name="Serial Plant Murderer" Weight="-2" Comment="连环植物杀手" />
+    <Atrribute Name="Stylist" Weight="-2" Comment="造型师" />
+    <Atrribute Name="Slumming Mechanic" Weight="-2" Comment="平民窟来的技工" />
+    <Atrribute Name="Beautician" Weight="-2" Comment="美容师" />
+    <Atrribute Name="Shakespearean Actor" Weight="-2" Comment="莎士比亚作品演员" />
+    <Atrribute Name="Sold used Cars" Weight="-2" Comment="卖二手车" />
+    <Atrribute Name="Homeopath" Weight="-2" Comment="顺势医疗者" />
+    <Atrribute Name="Braggart" Weight="-2" Comment="自吹自擂者" />
+    <Atrribute Name="Immature" Weight="-2" Comment="幼稚" />
+    <Atrribute Name="Kleptomaniac" Weight="-2" Comment="盗窃癖" />
+    <Atrribute Name="Bad Carpenter" Weight="-2" Comment="拙劣工人" />
+    <Atrribute Name="Cosplayer" Weight="-2" Comment="真人角色扮演玩家" />
+    <Atrribute Name="A little Forgetful" Weight="-2" Comment="有点健忘" />
+    <Atrribute Name="Computer &quot;Expert&quot;" Weight="-2" Comment="电脑“砖”家" />
+    <Atrribute Name="Irresponsible" Weight="-2" Comment="不负责任" />
+    <Atrribute Name="Loves Spicy Food" Weight="-2" Comment="热爱吃辣" />
+    <Atrribute Name="Taught Elementary School" Weight="-3" Comment="教过小学" />
+    <Atrribute Name="Zoologist" Weight="-3" Comment="动物学家" />
+  </Attributes>
+  <Attributes Lang="chi_sim" Using="0">
+    <Atrribute Name="杀不死的人" Weight="3" Comment="杀不死的人" />
+    <Atrribute Name="暗袋持有者" Weight="2" Comment="暗袋持有者" />
+    <Atrribute Name="麻雀般的胃" Weight="2" Comment="麻雀般的胃" />
+    <Atrribute Name="血疫幸存者" Weight="4" Comment="血疫幸存者" />
+    <Atrribute Name="睡在地上" Weight="1" Comment="睡在地上" />
+    <Atrribute Name="有韧性" Weight="2" Comment="有韧性" />
+    <Atrribute Name="无敌之人" Weight="3" Comment="无敌之人" />
+    <Atrribute Name="超强免疫系统" Weight="2" Comment="超强免疫系统" />
+    <Atrribute Name="步不停" Weight="3" Comment="脚步不停" />
+    <Atrribute Name="不灭" Weight="3" Comment="不灭" />
+    <Atrribute Name="外卖送餐员" Weight="1" Comment="外卖送餐员" />
+    <Atrribute Name="防守" Weight="2" Comment="防守派" />
+    <Atrribute Name="用药" Weight="1" Comment="轻量用药" />
+    <Atrribute Name="哪儿都能睡" Weight="2" Comment="哪儿都能睡" />
+    <Atrribute Name="练瑜伽" Weight="1" Comment="练瑜伽" />
+    <Atrribute Name="挨得了拳头" Weight="1" Comment="挨得了拳头" />
+    <Atrribute Name="硬汉" Weight="1" Comment="硬汉" />
+    <Atrribute Name="从未生病" Weight="3" Comment="从未生病" />
+    <Atrribute Name="专业旅者" Weight="1" Comment="专业旅者" />
+    <Atrribute Name="怀有希望的人" Weight="1" Comment="怀有希望的人" />
+    <Atrribute Name="做了很多大胆辜" Weight="2" Comment="做了很多大胆事" />
+    <Atrribute Name="好习惯" Weight="2" Comment="好习惯" />
+    <Atrribute Name="天生好体格" Weight="1" Comment="天生好体格" />
+    <Atrribute Name="苦行者" Weight="1" Comment="苦行者" />
+    <Atrribute Name="熬夜惯犯" Weight="1" Comment="熬夜惯犯" />
+    <Atrribute Name="深蹲" Weight="2" Comment="深蹲铁人" />
+    <Atrribute Name="夜校学生" Weight="1" Comment="夜校学生" />
+    <Atrribute Name="体态" Weight="1" Comment="体态良好" />
+    <Atrribute Name="决心之人" Weight="1" Comment="决心之人" />
+    <Atrribute Name="石心肠" Weight="2" Comment="铁石心肠" />
+    <Atrribute Name="高肺" Weight="1" Comment="高肺活量" />
+    <Atrribute Name="习惯早起" Weight="1" Comment="习惯早起" />
+    <Atrribute Name="什么都吃" Weight="2" Comment="什么都吃" />
+    <Atrribute Name="不知疲倦" Weight="2" Comment="不知疲倦" />
+  </Attributes>
+  <CharacterRects>
+    <CharacterRect id="0" Left="710" Top="705" Right="1340" Bottom="930" ButtonX="1015" ButtonY="825" />
+    <CharacterRect id="1" Left="1600" Top="705" Right="2230" Bottom="930" ButtonX="1905" ButtonY="825" />
+    <CharacterRect id="2" Left="2470" Top="705" Right="3100" Bottom="930" ButtonX="2775" ButtonY="825" />
+  </CharacterRects>
+  <Parameter delay="20" weight="10" />
+</CharacterRoller>
