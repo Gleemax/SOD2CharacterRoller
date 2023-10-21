@@ -1,8 +1,8 @@
 # SOD2CharacterRoller
 A self-made sod2 character roller using tesseract ocr engine.
 
-Recently Version: 1.2.1  
-UI Language Support: Chinese  
+Recently Version: 1.3beta   
+UI Language Support: Chinese / English  
 Gameplay Lanaguage Support: English  
 
 
@@ -19,6 +19,7 @@ Calculation of weight:
 The weight of a trait depend on the trait list on the left side.  
 The weight of a character is equal to the sum of all traits he have.  
 When the weight of the character is bigger than the target weight you fill, the roll process of that slot will stop.  
+Any traits which have the same type will calculate once.   
 
 Example of a weight calculation:  
 If weight of "blood plague survivor" is set to 5, and weight of "unbreakable" is set to 4.  
