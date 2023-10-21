@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
+
 using System.Xml;
 using System.Data;
 using System.Drawing;
@@ -24,6 +24,7 @@ namespace SoD2CharacterRoller
         private static String XmlBackupPath = @".\CharacterRoller_Backup.xml";
 
         private String Lang = "eng";
+        private String DisplayLnag = "";
 
         private List<CharacterAttributes> Attributes = null;
 
@@ -47,13 +48,20 @@ namespace SoD2CharacterRoller
 
         protected void Initialize()
         {
+            DisplayLnag = System.Globalization.CultureInfo.CurrentCulture.Name;
+            LoadLanguage(DisplayLnag);
+
             RegistKey();
 
             Attributes = new List<CharacterAttributes>();
             CharacterRects = new Dictionary<int, CharacterRect>();
             ExecuteThreads = new Thread[3];
 
-            LoadXmlFile(XmlPath, ref Attributes, ref CharacterRects);
+            String delay = "";
+            String target = "";
+            XmlUtil.LoadXmlFile(XmlPath, ref Attributes, ref CharacterRects, ref delay, ref target);
+            txbOpearDelay.Text = delay;
+            txbTargetWeight.Text = target;
 
             if (Attributes.Count == 0)
             {
@@ -98,136 +106,20 @@ namespace SoD2CharacterRoller
             OperateThread.Start();
         }
 
-        protected void LoadXmlFile(String path, ref List<CharacterAttributes> a, ref Dictionary<int, CharacterRect> b)
+        protected void LoadLanguage(String lang)
         {
-            if (File.Exists(path))
+            if (lang == "zh-CN")
             {
-                XmlDocument xml = new XmlDocument();
-                xml.Load(path);
-
-                XmlNode xmlRoot = xml.SelectSingleNode("CharacterRoller");
-                XmlNodeList nodes = null;
-
-                foreach (XmlNode xmlAttr in xmlRoot.SelectNodes("Attributes"))
-                {
-                    String lang = ((XmlElement)xmlAttr).GetAttribute("Lang");
-                    bool use = ((XmlElement)xmlAttr).GetAttribute("Using") == "1";
-
-                    CharacterAttributes c = new CharacterAttributes(lang, use);
-
-                    nodes = xmlAttr.SelectNodes("Atrribute");
-                    foreach (XmlElement xe in nodes)
-                    {
-                        String name = xe.GetAttribute("Name");
-                        int.TryParse(xe.GetAttribute("Weight"), out int weight);
-                        String comment = xe.GetAttribute("Comment");
-
-                        c.Attributes.Add(new CharacterAttribute(name, weight, comment));
-                    }
-                    c.Attributes.Add(new CharacterAttribute("", 0, ""));
-
-                    a.Add(c);
-                }
-
-                XmlNode xmlRect = xmlRoot.SelectSingleNode("CharacterRects");
-                nodes = xmlRect.SelectNodes("CharacterRect");
-                foreach (XmlElement xe in nodes)
-                {
-                    int.TryParse(xe.GetAttribute("id"), out int id);
-                    int.TryParse(xe.GetAttribute("Left"), out int left);
-                    int.TryParse(xe.GetAttribute("Top"), out int top);
-                    int.TryParse(xe.GetAttribute("Right"), out int right);
-                    int.TryParse(xe.GetAttribute("Bottom"), out int bottom);
-                    int.TryParse(xe.GetAttribute("ButtonX"), out int buttonX);
-                    int.TryParse(xe.GetAttribute("ButtonY"), out int buttonY);
-
-                    if (!b.ContainsKey(id))
-                    {
-                        b.Add(id, new CharacterRect(left, top, right, bottom, buttonX, buttonY));
-                    }
-                }
-
-                XmlElement xmlPara = (XmlElement)xmlRoot.SelectSingleNode("Parameter");
-                {
-                    int.TryParse(xmlPara.GetAttribute("delay"), out int delay);
-                    int.TryParse(xmlPara.GetAttribute("weight"), out int weight);
-                    if (delay != 0) txbOpearDelay.Text = delay.ToString();
-                    if (weight != 0) txbTargetWeight.Text = weight.ToString();
-                }
+                linkJoinGroup.Visible = true;
+                linkWiki.Visible = true;
             }
             else
             {
-                b.Add(0, new CharacterRect(470, 390, 790, 570, 450, 1075));
-                b.Add(1, new CharacterRect(1265, 390, 1605, 570, 1275, 1075));
-                b.Add(2, new CharacterRect(2095, 390, 2435, 570, 2095, 1075));
+                linkJoinGroup.Visible = false;
+                linkWiki.Visible = false;
             }
         }
 
-        protected void SaveXmlFile(String path, String backup, List<CharacterAttributes> a, ref Dictionary<int, CharacterRect> b)
-        {
-            XmlDocument xml = new XmlDocument();
-
-            if (File.Exists(path))
-            {
-                if (File.Exists(backup))
-                {
-                    File.Delete(backup);
-                }
-                File.Move(path, backup);
-            }
-
-            XmlElement xmlRoot = xml.CreateElement("CharacterRoller");
-            xml.AppendChild(xmlRoot);
-
-            foreach (CharacterAttributes p in a)
-            {
-                XmlElement xmlAttr = xml.CreateElement("Attributes");
-                xmlAttr.SetAttribute("Lang", p.Lang);
-                xmlAttr.SetAttribute("Using", p.Using ? "1" : "0");
-
-                foreach (var v in p.Attributes)
-                {
-                    if (v.Name != null && v.Name != "")
-                    {
-                        XmlElement ele = xml.CreateElement("Atrribute");
-                        ele.SetAttribute("Name", v.Name);
-                        ele.SetAttribute("Weight", v.Weight.ToString());
-                        ele.SetAttribute("Comment", v.Comment.ToString());
-                        xmlAttr.AppendChild(ele);
-                    }
-                }
-                xmlRoot.AppendChild(xmlAttr);
-            }
-
-            XmlElement xmlRect = xml.CreateElement("CharacterRects");
-            foreach (var v in b)
-            {
-                XmlElement ele = xml.CreateElement("CharacterRect");
-                ele.SetAttribute("id", v.Key.ToString());
-                ele.SetAttribute("Left", v.Value.Left.ToString());
-                ele.SetAttribute("Top", v.Value.Top.ToString());
-                ele.SetAttribute("Right", v.Value.Right.ToString());
-                ele.SetAttribute("Bottom", v.Value.Bottom.ToString());
-                ele.SetAttribute("ButtonX", v.Value.ButtonX.ToString());
-                ele.SetAttribute("ButtonY", v.Value.ButtonY.ToString());
-                xmlRect.AppendChild(ele);
-            }
-            xmlRoot.AppendChild(xmlRect);
-
-            XmlElement xmlPara = xml.CreateElement("Parameter");
-            xmlPara.SetAttribute("delay", txbOpearDelay.Text);
-            xmlPara.SetAttribute("weight", txbTargetWeight.Text);
-            xmlRoot.AppendChild(xmlPara);
-
-            try
-            {
-                xml.Save(path);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Save Failed!");
-            }
-        }
 
         protected void RegistKey()
         {
@@ -466,14 +358,27 @@ namespace SoD2CharacterRoller
         protected int GetOcrWeight(String ocr)
         {
             int weight = 0;
+            Dictionary<String, int> typeweight = new Dictionary<string, int>();
             if (ocr != null && ocr != "")
             {
                 foreach (var attr in ((SortableBindingList<CharacterAttribute>)dgvAttributes.DataSource))
                 {
                     if (ocr.ToLower().Contains(attr.Name.ToLower()))
                     {
-                        weight += attr.Weight;
+                        if (attr.Type == null || attr.Type == "")
+                        {
+                            weight += attr.Weight;
+                        }
+                        else
+                        {
+                            int old = typeweight.ContainsKey(attr.Type) ? typeweight[attr.Type] : 0;
+                            typeweight[attr.Type] = Math.Max(old, attr.Weight);
+                        }
                     }
+                }
+                foreach (var w in typeweight.Values)
+                {
+                    weight += w;
                 }
                 String[] ocrs = ocr.Split(';');
                 foreach (String s in ocrs)
@@ -565,7 +470,7 @@ namespace SoD2CharacterRoller
                 if (dgvAttributes.Rows[e.RowIndex].Cells[0].Value != null &&
                     (String)dgvAttributes.Rows[e.RowIndex].Cells[0].Value != "")
                 {
-                    ((SortableBindingList<CharacterAttribute>)dgvAttributes.DataSource).Add(new CharacterAttribute("", 0, ""));
+                    ((SortableBindingList<CharacterAttribute>)dgvAttributes.DataSource).Add(new CharacterAttribute("", 0, "", ""));
                 }
             }
             else
@@ -580,7 +485,9 @@ namespace SoD2CharacterRoller
 
         private void btnSaveConfig_Click(object sender, EventArgs e)
         {
-            SaveXmlFile(XmlPath, XmlBackupPath, Attributes, ref CharacterRects);
+            String delay = txbOpearDelay.Text;
+            String target = txbTargetWeight.Text;
+            XmlUtil.SaveXmlFile(XmlPath, XmlBackupPath, Attributes, CharacterRects, delay, target);
         }
 
         private void btnAutoCali_Click(object sender, EventArgs e)
@@ -638,9 +545,10 @@ namespace SoD2CharacterRoller
                     if (c.Attributes != null)
                     {
                         dgvAttributes.DataSource = c.Attributes;
-                        dgvAttributes.Columns[0].Width = 200;
-                        dgvAttributes.Columns[1].Width = 75;
-                        dgvAttributes.Columns[2].Width = 175;
+                        dgvAttributes.Columns[0].Width = 175;
+                        dgvAttributes.Columns[1].Width = 60;
+                        dgvAttributes.Columns[2].Width = 50;
+                        dgvAttributes.Columns[3].Width = 165;
                     }
                     c.Using = true;
                 }
@@ -693,5 +601,6 @@ namespace SoD2CharacterRoller
         {
             System.Diagnostics.Process.Start("https://wiki.biligame.com/stateofdecay2/%E7%89%B9%E8%B4%A8");
         }
+
     }
 }

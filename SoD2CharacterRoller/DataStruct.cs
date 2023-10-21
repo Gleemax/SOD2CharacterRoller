@@ -42,16 +42,20 @@ namespace SoD2CharacterRoller
 
         public int Weight { get; set; }
 
+        public String Type { get; set; }
+
         public String Comment { get; set; }
 
         public CharacterAttribute(
             String Name,
             int Weight,
+            String Type,
             String Comment
             )
         {
             this.Name = Name;
             this.Weight = Weight;
+            this.Type = Type;
             this.Comment = Comment;
         }
     }
